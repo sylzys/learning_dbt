@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: snowflake_sample_data
+    description: Sample db to learn dbt
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: orders
+        description: Order details
+      - name: customers
+        description: Customer details
+    
