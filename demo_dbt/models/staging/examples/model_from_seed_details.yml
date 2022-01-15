@@ -1,0 +1,23 @@
+
+version: 2
+
+models:
+    - name: model_from_seed_details
+      description: >
+        List of customers and # of orders.
+
+      columns:
+        - name: id
+          description: "customer id"
+          tests:
+            - not_null
+
+        - name: user
+          description: "User's full name"
+          tests:
+            - not_null
+
+        - name: nb_orders
+          description: "Number of orders for the customer"
+          tests:
+            - is_order_above_zero           

@@ -18,7 +18,7 @@ final as (
     select
         details.id as id,
         details.name as user,
-        details.orders as amount 
+        details.orders as nb_orders 
 
     from details
 )
