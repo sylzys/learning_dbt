@@ -19,3 +19,8 @@ models:
         tests:
           - unique
           - not_null
+
+
+# id in autoincrement start 1 increment 1,
+# audit_type varchar(50),
+# created_at timestamp default current_timestamp()

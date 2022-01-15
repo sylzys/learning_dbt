@@ -15,8 +15,8 @@ validation_errors as (
         nb_orders
 
     from validation
-    -- if this is true, then even_field is actually odd!
-    where nb_orders > 0
+    -- If true, test will fail
+    where nb_orders <= {{ var('min_orders')}}
 
 )
 
