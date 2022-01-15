@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: public
+    database: learn
+
+    freshness: # default freshness
+      warn_after: {count: 4, period: hour}
+      error_after: {count: 24, period: hour}
+
+    loaded_at_field: "convert_timezone('UTC', 'America/Los_Angeles', created_at)"
+    tables:
+      - name: example_orders
+        freshness:
+          filter: datediff('hour', created_at, current_timestamp) < 2 # exclude records created 2h ago. improve perf
+
+# dbt source snapshot-freshness
