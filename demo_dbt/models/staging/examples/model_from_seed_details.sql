@@ -16,7 +16,7 @@ final as (
     from details
 )
 
-select * from final
+select *, '{{ invocation_id }}' as invocation_id from final
 
 --  dbt ls --models state:modified --state .
 --  dbt run --models state:modified --state .
