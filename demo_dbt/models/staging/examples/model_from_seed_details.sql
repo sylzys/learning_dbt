@@ -1,15 +1,8 @@
 
+{{ config(
+    query_tag = 'dbt_demo'
+) }}
 
--- with order_details as (
---     select * from {{ ref('example_orders') }}
--- ),
-
--- final as (
---     select
---         example_orders.id as id,
---         example_orders.name as user,
---         example_orders.orders as amount 
--- )
 with details as (
     select * from {{ ref('example_orders') }}
 ),
