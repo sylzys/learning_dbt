@@ -1,6 +1,6 @@
 
 {{ config(
-    query_tag = 'dbt_demo'
+    query_tag = 'dbt_demo_tag'
 ) }}
 
 with details as (
@@ -17,3 +17,6 @@ final as (
 )
 
 select * from final
+
+--  dbt ls --models state:modified --state .
+--  dbt run --models state:modified --state .
